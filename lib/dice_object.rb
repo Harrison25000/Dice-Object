@@ -4,7 +4,16 @@ class Dice
   end
 
   def many_dice(dice)
-  dice.times do puts rand(1..6)
+    @array = []
+    dice.times do
+               @array.push(rand(1..6))
              end
+    @x = @array.each do |p| p.to_i  end
+      @x.length
+
+  end
+
+  def result
+    @x
   end
 end

@@ -8,10 +8,16 @@ describe Dice do
     expect(x).to include(dice.roll)
   end
 
-puts "----------"
-
   it 'should roll many dice' do
     dice = Dice.new
     expect(dice.many_dice(3)).to eq(3)
   end
+
+  it 'should return the result of each dice roll' do
+    dice = Dice.new
+    dice.many_dice(3)
+    expect(dice.result).to eq(dice.result.each do |p| p.to_i end)
+    print dice.result.join(",")
+  end
+
 end
